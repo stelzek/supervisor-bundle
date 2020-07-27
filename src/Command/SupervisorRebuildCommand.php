@@ -66,7 +66,7 @@ class SupervisorRebuildCommand extends Command
             $this->configGenerator->generate($instance);
             $io->success("[{$instance}] Generated new config files");
 
-            if ('yes' === $io->ask('Do you want to start workers?', 'yes')) {
+            if ('yes' === $io->ask('Do you want to start workers?', 'no')) {
                 $this->operator->start($instance);
                 $io->success("[{$instance}] Started workers");
             }
